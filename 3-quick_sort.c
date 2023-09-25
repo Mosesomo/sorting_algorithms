@@ -39,11 +39,8 @@ int lomuto_partition(int *array, size_t size, int first, int last)
 			print_array(array, size);
 		}
 	}
-	if (array[i + 1] > pivot)
-	{
-		swap(&array[i + 1], &array[last]);
-		print_array(array, size);
-	}
+	swap(&array[i + 1], &array[last]);
+	print_array(array, size);
 
 	return (i + 1);
 }
@@ -75,7 +72,7 @@ void quick_sort_recurse(int *array, size_t size, int first, int last)
 
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
+	if (array == NULL || size <= 1)
 		return;
 	quick_sort_recurse(array, size, 0, size - 1);
 }
