@@ -19,6 +19,7 @@ void swap(int *a, int *b)
  *lomuto_partition - sort the array elements by assigning
  *the last element of the array to pivote
  *@array: pointer to array to sort
+ *@size: size of the array
  *@first: first index elemnt of thr array
  *@last: last index element of the array
  *Return: always 0 on success
@@ -29,7 +30,7 @@ int lomuto_partition(int *array, size_t size, int first, int last)
 	int i, j, pivot;
 
 	if (array == NULL || size < 2)
-		return 0;
+		return (0);
 
 	pivot = array[last];
 	i = first - 1;
@@ -52,6 +53,7 @@ int lomuto_partition(int *array, size_t size, int first, int last)
 /**
  *quick_sort_recurse - recurses the lomuto partition
  *@array: pointer to the array
+ *@size: size of the array
  *@first: first index
  *@last: last index
  */
