@@ -42,12 +42,12 @@ void shell_sort(int *array, size_t size)
 				if (array[j] < array[j - gap])
 				{
 					swap(&array[j], &array[j - gap]);
-					print_array(array, size);
 				}
 				else
 					break;
 			}
 		}
+		print_array(array, size);
 		gap = (gap - 1) / 3;
 	}
 }
