@@ -31,7 +31,7 @@ int lomuto_partition(int *array, size_t size, int first, int last)
 
 	if (array == NULL || size < 2)
 		return (0);
-	
+
 	pivot = array[last];
 	i = first - 1;
 
