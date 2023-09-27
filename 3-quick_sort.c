@@ -27,12 +27,14 @@ void swap(int *a, int *b)
 
 int lomuto_partition(int *array, size_t size, int first, int last)
 {
-	int i, j, pivot;
+	int i, j, pivot, pivot_idx;
 
 	if (array == NULL || size < 2)
 		return (0);
-
-	pivot = array[last];
+	
+	pivot_idx = first + rand() % (last - first + 1);
+	pivot = array[pivot_idx];
+	swap(&array[pivot_idx], &array[last]);
 	i = first - 1;
 
 	for (j = first ; j <= last - 1 ; j++)
